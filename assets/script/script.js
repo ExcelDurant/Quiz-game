@@ -1,5 +1,4 @@
 
-
 var question_1 = {
     question: "Who was the first president of the US?",
     answer_1: "Abraham Lincoln",
@@ -44,15 +43,19 @@ for (let i = 0; i < 5; i++) {
 }
 console.log(questions);
 
+var numberOfQuestions = questions.length;
+
 // creates the question
 function questionaire() {
+    // Point allocation
+    let points = 0;
 
     function showQuestion() {
 
         // converts the string in the array of questions into a variable
-        let val = Object.values(window[questions[Math.ceil(Math.random() * 4)]]);
+        let val = Object.values(window[questions[Math.ceil(Math.random() * (numberOfQuestions-1))]]);
 
-        // Displays the question and the answers
+        // Displays the question and the answers without displaying the correct answer
         for (let i = 0; i < 5; i++) {
             if (i < 5 && i > 0) {
                 console.log(i + ") " + val[i])
@@ -71,12 +74,13 @@ function questionaire() {
             let answer = val[choice];
             if (answer == val[5]) {
                 console.log("You have chosen the correct answer");
+                // Adding points after successfully answering
+                points += 1;
+                // Show the next question
                 showQuestion();
-
             } else {
                 console.log("You have chosen the wrong answer");
-                showQuestion();
-
+                console.log("your points are", points);
             }
         }
     }
