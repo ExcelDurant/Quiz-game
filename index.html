@@ -4,10 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> 
 </head>
 <body>
     
+    <h1 class="game-title">
+        TropTop QUIZ
+    </h1>
 
+    <section class="quiz-box">
+        <h1 class="welcome">
+            welcome to the troptop quiz game. Prove to me that you are not one of those dull
+             fools roaming the streets of our country.
+        </h1>
+        <button class="continue1-btn btn">CONTINUE</button>
+    </section>
+
+    <section class="quiz-box">
+        <h1 class="rules-title">
+            how everything works. I guess you are really dull to not even know the rules for such an easy game
+        </h1>
+        <ul class="rules">
+            <li class="rule">you start off with 3 lives</li>
+            <li class="rule">you answers questions</li>
+            <li class="rule">each question has 4 possible answers</li>
+            <li class="rule">a life is removed when answering wrongly</li>
+            <li class="rule">you gain points when answering correctly</li>
+            <li class="rule">there are 3 levels of difficulty</li>
+            <li class="rule"> you move up a level after clearing all the questions of the previous level</li>
+        </ul>
+        <button class="continue2-btn btn">CONTINUE</button>
+    </section>
+
+    <section class="quiz-box">
+        <h1 class="name-title">
+            in case you did not know, I need your name
+        </h1>
+        <p class="enter">
+            enter your name here:
+        </p>
+        <input type="text" id="name" name="name" class="name">
+        <button class="continue2-btn btn">START GAME</button>
+    </section>
+
+    <section class="quiz-box game-box">
+        <div>
+            <h1 class="points"><span class="point">0</span><br/>points</h1>
+        </div>
+        <div class="middle">
+            <div class="question-box">
+                <span class="question-text">
+                    Who was the first president of the US?
+                </span>
+            </div>
+            <div class="answers-sec">
+                <button class="answer" onclick="correctAns(1)">Abraham Lincoln</button>
+                <button class="answer" onclick="correctAns(2)">Abr</button>
+                <button class="answer" onclick="correctAns(3)">Abraham Lincoln</button>
+                <button class="answer" onclick="correctAns(4)">Abraham </button>
+            </div>
+            <div id="interval">0</div>
+        </div>
+        <div class="player-info-sec">
+            <h1 class="lives"><span>3</span><br/>lives</h1>
+        </div>
+    </section>
+
+
+    <!-- <div id="main">
+        <ul class="questionaire">
+            <li class="question">0</li>
+            <li class="answers">1</li>
+            <li class="answers">2</li>
+            <li class="answers">3</li>
+            <li class="answers">4</li>
+        </ul>
+    </div> -->
 
     <script src="assets/script/script.js">
     </script>
