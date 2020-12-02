@@ -14,15 +14,17 @@
         TropTop QUIZ
     </h1>
 
-    <section class="quiz-box">
+    <!-- <embed src="assets/sounds/POL-two-fat-gangsters-short.wav" loop="true" autostart="true" width="2" height="0"></embed> -->
+
+    <section id="box-1" class="quiz-box">
         <h1 class="welcome">
             welcome to the troptop quiz game. Prove to me that you are not one of those dull
              fools roaming the streets of our country.
         </h1>
-        <button class="continue1-btn btn">CONTINUE</button>
+        <button class="continue1-btn btn" onclick="showBox2()">CONTINUE</button>
     </section>
 
-    <section class="quiz-box">
+    <section id="box-2" class="quiz-box hide">
         <h1 class="rules-title">
             how everything works. I guess you are really dull to not even know the rules for such an easy game
         </h1>
@@ -35,10 +37,10 @@
             <li class="rule">there are 3 levels of difficulty</li>
             <li class="rule"> you move up a level after clearing all the questions of the previous level</li>
         </ul>
-        <button class="continue2-btn btn">CONTINUE</button>
+        <button class="continue2-btn btn" onclick="showBox3()">CONTINUE</button>
     </section>
 
-    <section class="quiz-box">
+    <section id="box-3" class="quiz-box hide">
         <h1 class="name-title">
             in case you did not know, I need your name
         </h1>
@@ -46,10 +48,11 @@
             enter your name here:
         </p>
         <input type="text" id="name" name="name" class="name">
-        <button class="continue2-btn btn">START GAME</button>
+        <button class="continue2-btn btn" onclick="showBox4()">START GAME</button>
+        <p class="alert"></p>
     </section>
 
-    <section class="quiz-box game-box">
+    <section id="box-4" class="quiz-box game-box hide">
         <div>
             <h1 class="points"><span class="point">0</span><br/>points</h1>
         </div>
@@ -60,10 +63,10 @@
                 </span>
             </div>
             <div class="answers-sec">
-                <button class="answer" onclick="correctAns(1)">Abraham Lincoln</button>
-                <button class="answer" onclick="correctAns(2)">Abr</button>
-                <button class="answer" onclick="correctAns(3)">Abraham Lincoln</button>
-                <button class="answer" onclick="correctAns(4)">Abraham </button>
+                <button class="answer btn" onclick="correctAns(1)">Abraham Lincoln</button>
+                <button class="answer btn" onclick="correctAns(2)">Abr</button>
+                <button class="answer btn" onclick="correctAns(3)">Abraham Lincoln</button>
+                <button class="answer btn" onclick="correctAns(4)">Abraham </button>
             </div>
             <div id="interval">0</div>
         </div>

@@ -39,11 +39,12 @@ var numberOfQuestions = questions.length;
 
 // Point allocation
 let points = 0;
+let candidateName;
 
-// produces an array containing the questions and the answers from the array of objects(randomly)
-let val = Object.values(questions[Math.floor(Math.random() * (numberOfQuestions))]);
 
 function showQuestion() {
+    // Show the next question random question
+    val = Object.values(questions[Math.floor(Math.random() * (numberOfQuestions))]);
 
     // Displays the questions and answers on the interface
     var y = document.getElementsByClassName('question-text');
@@ -56,7 +57,7 @@ function showQuestion() {
     // Displays the question and the answers without displaying the correct answer in the console
     console.log(val[0])
     for (let i = 0; i < 4; i++) {
-        console.log((i + 1) + ")" + val[1][i])
+        console.log((i + 1) + ")" + val[1][i]);
     }
 
 
@@ -74,8 +75,6 @@ function correctAns(n) {
         // Adding points after successfully answering
         points += 1;
         point[0].innerHTML = points;
-        // Show the next question random question
-        val = Object.values(questions[Math.floor(Math.random() * (numberOfQuestions))]);
         showQuestion();
     } else {
         err.innerHTML = 'wrong answer';
@@ -84,13 +83,39 @@ function correctAns(n) {
     }
 }
 
-showQuestion();
 
 
+//displaying the different boxes(game menus) on button click
+function showBox2() {
+    document.getElementById("box-1").classList.toggle("hide");
+    document.getElementById("box-2").classList.toggle("show");
+}
 
+function showBox3() {
+    document.getElementById("box-2").classList.remove("show");
+    document.getElementById("box-3").classList.toggle("show");
+}
 
+function showBox4() {
+    //takes in the player name
+    candidateName = document.getElementById("name").value;
+    let alert = document.getElementsByClassName("alert");
+    if (candidateName == "") {
+        //alerts when user has not entered his name
+        alert[0].innerHTML = "Please enter your name";
+    } else {
+        document.getElementById("box-3").classList.remove("show");
+        document.getElementById("box-4").classList.toggle("show-grid");
+        //shows the question
+        showQuestion();
+    }
 
+    return candidateName;
+}
 
+// function playSound(url) {
+//     const audio = new Audio(url);
+//     audio.play();
+// }
 
-
-
+// window.addEventListener("load", playSound('C:\Users\gnopa\Documents\lesson1\level1-project\assets\sounds\POL-two-fat-gangsters-short.wav'));
