@@ -13,6 +13,13 @@
     <h1 class="game-title">
         TropTop QUIZ
     </h1>
+    <audio id="game-audio" src="assets/sounds/POL-two-fat-gangsters-short.mp3"></audio>
+    <audio id="click-audio" src="assets/sounds/click.mp3"></audio>
+    <audio id="point1-audio" src="assets/sounds/point1.mp3"></audio>
+    <audio id="point2-audio" src="assets/sounds/point2.mp3"></audio>
+    <audio id="point3-audio" src="assets/sounds/point3.mp3"></audio>
+    <audio id="lose-audio" src="assets/sounds/casual-game-lose-sound-effect-45947266.mp3"></audio>
+    <audio src="assets/sounds/wrong.mp3" id="wrong-audio"></audio>
 
     <!-- <embed src="assets/sounds/POL-two-fat-gangsters-short.wav" loop="true" autostart="true" width="2" height="0"></embed> -->
 
@@ -21,7 +28,7 @@
             welcome to the troptop quiz game. Prove to me that you are not one of those dull
              fools roaming the streets of our country.
         </h1>
-        <button class="continue1-btn btn" onclick="showBox2()">CONTINUE</button>
+        <button class="continue1-btn btn" id="btn1" onclick="showBox2()">CONTINUE</button>
     </section>
 
     <section id="box-2" class="quiz-box hide">
@@ -63,28 +70,18 @@
                 </span>
             </div>
             <div class="answers-sec">
-                <button class="answer btn" onclick="correctAns(1)">Abraham Lincoln</button>
-                <button class="answer btn" onclick="correctAns(2)">Abr</button>
-                <button class="answer btn" onclick="correctAns(3)">Abraham Lincoln</button>
-                <button class="answer btn" onclick="correctAns(4)">Abraham </button>
+                <button class="answer btn" onclick="correctAns(1)"></button>
+                <button class="answer btn" onclick="correctAns(2)"></button>
+                <button class="answer btn" onclick="correctAns(3)"></button>
+                <button class="answer btn" onclick="correctAns(4)"></button>
             </div>
-            <div id="interval">0</div>
+            <div id="error">0</div>
+            <div id="timer"></div>
         </div>
         <div class="player-info-sec">
-            <h1 class="lives"><span>3</span><br/>lives</h1>
+            <h1 class="live-text"><span class="lives">3</span><br/>lives</h1>
         </div>
     </section>
-
-
-    <!-- <div id="main">
-        <ul class="questionaire">
-            <li class="question">0</li>
-            <li class="answers">1</li>
-            <li class="answers">2</li>
-            <li class="answers">3</li>
-            <li class="answers">4</li>
-        </ul>
-    </div> -->
 
     <script src="assets/script/script.js">
     </script>

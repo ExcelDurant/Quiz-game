@@ -36,7 +36,7 @@ button {
 }
 
 .game-title {
-    font-size: 50px;
+    font-size: 55px;
     text-align: center;
     background: -webkit-linear-gradient(rgb(50, 17, 199), rgb(192, 19, 19));
     -webkit-background-clip: text;
@@ -115,6 +115,7 @@ button {
     border-radius: 7px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
+    font-size: 18px;
 }
 
 .alert {
@@ -158,7 +159,7 @@ button {
     grid-row-gap: 10px;
 }
 
-.lives {
+.live-text {
     text-align: center;
     font-weight: bolder;
 }
@@ -169,6 +170,29 @@ button {
 
 .answer:hover {
     background-color: yellow;
+}
+
+#error {
+    margin-top: 10px;
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+#timer {
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
 }
 
 .hide {
