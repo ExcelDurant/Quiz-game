@@ -186,6 +186,10 @@ button {
     text-align: center;
 }
 
+.result-box {
+    text-align: center;
+    text-transform: uppercase;
+}
 
 .red {
     color: red;

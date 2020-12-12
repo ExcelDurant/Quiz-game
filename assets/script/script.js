@@ -1,6 +1,8 @@
 
 // create an array containing all the questions
 var questions = [
+
+    //easy questions
     {
         question: "Who was the first president of the US?",
         answers: ["Abraham Lincoln", "Abraham Lincon", "Abrahom Lincoln", "Abraham Lancoln"],
@@ -29,6 +31,42 @@ var questions = [
         question: "who are you?",
         answers: ["me", "you", "I don know", "you and me"],
         correctAns: "me"
+    },
+
+    {
+        question:"What is the chemical formula for Table Salt?",
+        answers: ["CuSO4", "MgSO4", "NaCl", "NaSO4"],
+        correctAns: "NaCl"
+    },
+
+    {
+        question:"Which singer was known amongst other things as 'The King of Pop'?",
+        answers: ["Taylor Swift", "Michael Jackson", "Justin Bieber", "Bruno Mars"],
+        correctAns: "Michael Jackson"
+    },
+
+    {
+        question:"Which popular video game franchise has released games with the subtitles World At War and Black Ops?",
+        answers: ["Call Of Duty", "Battlefield", "Medal of Honor", "Desert Storm"],
+        correctAns: "Call Of Duty"
+    },
+
+    {
+        question:"What is the smallest planet in our solar system?",
+        answers: ["Venus", "Mars", "Mercury", "Pluto"],
+        correctAns: "Mercury"
+    },
+
+    {
+        question:"On average how far away is the moon from the earth in miles?",
+        answers: ["248000", "550000", "238000", "1250000"],
+        correctAns: "238000"
+    },
+
+    {
+        question:"What temperature centigrade does water boil at?",
+        answers: ["200 degrees centigrade", "100 degrees centigrade", "150 degrees centigrade", "80 degrees centigrade"],
+        correctAns: "100 degrees centigrade"
     }
 
 ]
@@ -37,37 +75,42 @@ let gameAudio = document.getElementById('game-audio');
 
 //storing all the sounds and the functions to play them
 let sounds = {
+    point1Audio: document.getElementById('point1-audio'),
+    wrongAudio: document.getElementById('wrong-audio'),
+    point2Audio: document.getElementById('point2-audio'),
+    point3Audio: document.getElementById('point3-audio'),
+
     gameSound: function () {
         gameAudio.loop = true;
         gameAudio.play();
     },
 
-    clickSound: function(){
+    clickSound: function () {
         let clickAudio = document.getElementById('click-audio');
         clickAudio.play();
     },
 
-    point1: function(){
+    point1: function () {
         let point1Audio = document.getElementById('point1-audio');
         point1Audio.play();
     },
 
-    point2: function(){
+    point2: function () {
         let point2Audio = document.getElementById('point2-audio');
         point2Audio.play();
     },
 
-    point3: function(){
+    point3: function () {
         let point3Audio = document.getElementById('point3-audio');
         point3Audio.play();
     },
 
-    loseSound: function(){
+    loseSound: function () {
         let loseAudio = document.getElementById('lose-audio');
         loseAudio.play();
     },
 
-    wrongSound: function(){
+    wrongSound: function () {
         let wrongAudio = document.getElementById('wrong-audio');
         wrongAudio.play();
     }
@@ -91,13 +134,13 @@ function showQuestion() {
     countdown = setInterval(timer, 1000);
     seconds = 15;
     function timer() {
-    seconds--;
-    document.getElementById("timer").innerHTML = seconds + "    seconds left";
-    if (seconds <= 0) {
-        // clearInterval(countdown);
-        falseAns();
+        seconds--;
+        document.getElementById("timer").innerHTML = seconds + "    seconds left";
+        if (seconds <= 0) {
+            // clearInterval(countdown);
+            falseAns();
+        }
     }
-}
     // Show the next question random question
     val = Object.values(questions[Math.floor(Math.random() * (numberOfQuestions))]);
 
@@ -125,12 +168,19 @@ function correctAns(n) {
     let choice = n - 1;
     let answer = val[1][choice];
     if (answer == val[2]) {
-        console.log("You have chosen the correct answer");
         // Adding points after successfully answering
-        points += 1;
+        if(seconds >= 12){
+            points += 3;
+            sounds.point3Audio.play();
+        } else if(seconds >= 8 && seconds < 12){
+            points += 2;
+            sounds.point2Audio.play();
+        } else {
+            points += 1;
+            sounds.point1Audio.play();
+        }
+        console.log("You have chosen the correct answer");
         point[0].innerHTML = points;
-        let point1Audio = document.getElementById('point1-audio');
-        point1Audio.play();
         showQuestion();
         clearInterval(countdown);
         // err.classList.toggle('green');
@@ -149,12 +199,12 @@ function falseAns() {
     lives -= 1;
     document.getElementsByClassName('lives')[0].innerHTML = lives;
     console.log("your lives are", lives);
-    let wrongAudio = document.getElementById('wrong-audio');
-    wrongAudio.play();
+    sounds.wrongAudio.play();
     showQuestion();
     clearInterval(countdown);
     if (lives <= -1) {
         document.getElementById("box-4").classList.remove("show-grid");
+        showBox5();
         sounds.loseSound();
         gameAudio.pause();
         wrongAudio.pause();
@@ -190,13 +240,18 @@ function showBox4() {
     return candidateName;
 }
 
-
-
-let auBtn = document.getElementById('btn1');
-let btn = document.getElementsByClassName('btn');
-for(let i = 0; i < btn.length; i++){
-    btn[i].addEventListener('click', sounds.clickSound);
+function showBox5() {
+    document.getElementsByClassName('candidate')[0].innerHTML = candidateName;
+    document.getElementsByClassName('points')[1].innerHTML = points;
+    document.getElementById("box-5").classList.remove("hide");
 }
 
+
+//adding sounds on click
+let auBtn = document.getElementById('btn1');
+let btn = document.getElementsByClassName('btn');
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener('click', sounds.clickSound);
+}
 auBtn.addEventListener('click', sounds.gameSound);
 
