@@ -34,37 +34,37 @@ var questions = [
     },
 
     {
-        question:"What is the chemical formula for Table Salt?",
+        question: "What is the chemical formula for Table Salt?",
         answers: ["CuSO4", "MgSO4", "NaCl", "NaSO4"],
         correctAns: "NaCl"
     },
 
     {
-        question:"Which singer was known amongst other things as 'The King of Pop'?",
+        question: "Which singer was known amongst other things as 'The King of Pop'?",
         answers: ["Taylor Swift", "Michael Jackson", "Justin Bieber", "Bruno Mars"],
         correctAns: "Michael Jackson"
     },
 
     {
-        question:"Which popular video game franchise has released games with the subtitles World At War and Black Ops?",
+        question: "Which popular video game franchise has released games with the subtitles World At War and Black Ops?",
         answers: ["Call Of Duty", "Battlefield", "Medal of Honor", "Desert Storm"],
         correctAns: "Call Of Duty"
     },
 
     {
-        question:"What is the smallest planet in our solar system?",
+        question: "What is the smallest planet in our solar system?",
         answers: ["Venus", "Mars", "Mercury", "Pluto"],
         correctAns: "Mercury"
     },
 
     {
-        question:"On average how far away is the moon from the earth in miles?",
+        question: "On average how far away is the moon from the earth in miles?",
         answers: ["248000", "550000", "238000", "1250000"],
         correctAns: "238000"
     },
 
     {
-        question:"What temperature centigrade does water boil at?",
+        question: "What temperature centigrade does water boil at?",
         answers: ["200 degrees centigrade", "100 degrees centigrade", "150 degrees centigrade", "80 degrees centigrade"],
         correctAns: "100 degrees centigrade"
     }
@@ -123,7 +123,7 @@ var numberOfQuestions = questions.length;
 // Point allocation
 let points = 0;
 let candidateName;
-let lives = 3;
+let lives;
 let err = document.getElementById('error');
 var countdown;
 var seconds;
@@ -131,6 +131,7 @@ var seconds;
 
 
 function showQuestion() {
+    document.getElementsByClassName('lives')[0].innerHTML = lives;
     countdown = setInterval(timer, 1000);
     seconds = 15;
     function timer() {
@@ -169,10 +170,10 @@ function correctAns(n) {
     let answer = val[1][choice];
     if (answer == val[2]) {
         // Adding points after successfully answering
-        if(seconds >= 12){
+        if (seconds >= 12) {
             points += 3;
             sounds.point3Audio.play();
-        } else if(seconds >= 8 && seconds < 12){
+        } else if (seconds >= 8 && seconds < 12) {
             points += 2;
             sounds.point2Audio.play();
         } else {
@@ -204,7 +205,7 @@ function falseAns() {
     clearInterval(countdown);
     if (lives <= -1) {
         document.getElementById("box-4").classList.remove("show-grid");
-        showBox5();
+        showBox6();
         sounds.loseSound();
         gameAudio.pause();
         wrongAudio.pause();
@@ -233,17 +234,24 @@ function showBox4() {
     } else {
         console.log(candidateName);
         document.getElementById("box-3").classList.remove("show");
-        document.getElementById("box-4").classList.toggle("show-grid");
-        //shows the question
-        showQuestion();
+        document.getElementById("box-4").classList.toggle("show");
     }
     return candidateName;
 }
 
-function showBox5() {
+function showBox5(n) {
+    document.getElementById("box-4").classList.remove("show");
+    document.getElementById("box-5").classList.toggle("show-grid");
+    lives = n;
+    //shows the question
+    showQuestion();
+}
+
+function showBox6() {
     document.getElementsByClassName('candidate')[0].innerHTML = candidateName;
     document.getElementsByClassName('points')[1].innerHTML = points;
-    document.getElementById("box-5").classList.remove("hide");
+    document.getElementById("box-5").classList.remove("show-grid");
+    document.getElementById("box-6").classList.remove("hide");
 }
 
 

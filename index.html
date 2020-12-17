@@ -59,7 +59,16 @@
         <p class="alert"></p>
     </section>
 
-    <section id="box-4" class="quiz-box game-box hide">
+    <section id="box-4" class="quiz-box hide">
+        <h1 class="mode-title name-title">choose difficulty mode</h1>
+        <div class="modes-sec">
+            <button class="btn mode-btn" onclick="showBox5(10)">easy mode</button>
+            <button class="btn mode-btn" onclick="showBox5(5)">medium mode</button>
+            <button class="btn mode-btn" onclick="showBox5(3)">hard mode</button>
+        </div>
+    </section>
+
+    <section id="box-5" class="quiz-box game-box hide">
         <div>
             <h1 class="points"><span class="point">0</span><br/>points</h1>
         </div>
@@ -75,15 +84,15 @@
                 <button class="answer btn" onclick="correctAns(3)"></button>
                 <button class="answer btn" onclick="correctAns(4)"></button>
             </div>
-            <div id="error">0</div>
+            <div id="error"></div>
             <div id="timer"></div>
         </div>
         <div class="player-info-sec">
-            <h1 class="live-text"><span class="lives">3</span><br/>lives</h1>
+            <h1 class="live-text"><span class="lives"></span><br/>lives</h1>
         </div>
     </section>
 
-    <section id="box-5" class="quiz-box result-box hide">
+    <section id="box-6" class="quiz-box result-box hide">
         <h1>hello <span class="candidate"></span> you lost. you are a fool</h1>
         <p>you lost with <span class="points"></span> points</p>
     </section>
