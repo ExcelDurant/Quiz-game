@@ -67,6 +67,202 @@ var questions = [
         question: "What temperature centigrade does water boil at?",
         answers: ["200 degrees centigrade", "100 degrees centigrade", "150 degrees centigrade", "80 degrees centigrade"],
         correctAns: "100 degrees centigrade"
+    },
+    {
+        question:"What is the tallest mountain in the world?",
+        answers: ["Mount Everest", "Mount K2", "Mount Makalu", "Mount Cho Oyu"],
+        correctAns:"Mount Everest"
+    },
+    {
+        question:"What part of a plant conducts photosynthesis?",
+        answers: ["Stem", "root", "leaf", "flower"],
+        correctAns:"leaf"
+    },
+    {
+        question:"How many elements are in the periodic table?",
+        answers: ["102", "118", "116", "119"],
+        correctAns:"118"
+    },
+    {
+        question:"Elon Musk is the CEO of which global brand",
+        answers: ["Xbox", "Tesla", "Sony", "Toyota"],
+        correctAns:"Tesla"
+    },
+    {
+        question:"Which operating system does a Google Pixel phone use",
+        answers: ["Pixel", "Kindle", "IOS", "Android"],
+        correctAns:"Android"
+    },
+    {
+        question:"Who killed Tony Stark’s parents?",
+        answers: ["Spiderman", "Captain America", "The Winter Soldier", "Black Panther"],
+        correctAns:"The Winter Soldier"
+    },
+    {
+        question:"What is the highest-grossing Marvel movie without the word ‘Avengers’ in the title",
+        answers: ["Spiderman 2", "Black Panther", "Iron Man", "Captain Marvel"],
+        correctAns:"Black Panther"
+    },
+    {
+        question:"Botany is the study of what life form?",
+        answers: ["ants", "fish", "Plants", "birds"],
+        correctAns:"Plants"
+    },
+    {
+        question:"What is the largest animal on the planet?",
+        answers: ["Sperm whale", "Cashalo", "Elephant", "Blue whale"],
+        correctAns:"Blue whale"
+    },
+    {
+        question:"What causes John Wick to return to his old life of crime in John Wick?",
+        answers: ["His wife’s death", "His dog’s murder", "his house was destroyed", "His car was stolen"],
+        correctAns:"His dog’s murder"
+    },
+    {
+        question:"Who plays John J Rambo in Rambo?",
+        answers: ["Sylvester Stallone", "Keanu Reeves", "Dwayne Johnson", "Jason Statham"],
+        correctAns:"Sylvester Stallone"
+    },
+
+    {
+        question:"How high is Mount Everest in metres?",
+        answers: ["8,848m", "8100m", "1145m", "9456m"],
+        correctAns:"8,848 metres"
+    },
+
+    {
+        question:"What is the most spoken language in the world?",
+        answers: ["English", "Spanish", "Japanese", "Mandarin"],
+        correctAns:"Mandarin"
+    },
+
+    {
+        question:"In the film The Lion King, what kind of animal is Timon?",
+        answers: ["Squirrel", "Rat", "Meerkat", "Bush Pig"],
+        correctAns:"Meerkat"
+    },
+
+    {
+        question:"How many legs does a lobster have?",
+        answers: ["6", "7", "8", "5"],
+        correctAns:"8"
+    },
+
+    {
+        question:"How many teeth does an adult human have?",
+        answers: ["40", "32", "36", "24"],
+        correctAns:"32"
+    },
+
+    {
+        question:"What is the tallest building in the world",
+        answers: ["Shanghai Tower", "Empire State Tower", "Burj Khalifa", "One World Trade Center"],
+        correctAns:"Burj Khalifa"
+    },
+
+    {
+        question:"What famous man became president of his country after being in jail for 18 years?",
+        answers: ["Abraham Lincoln", "Nelson Mandela", "Martin Luther King", "George Washington"],
+        correctAns:"Nelson Mandela"
+    },
+
+    {
+        question:"Which animal is genetically closest to humans?",
+        answers: ["baboon", "rat", "Chimpanzee", "bat"],
+        correctAns:"Chimpanzee"
+    },
+
+    {
+        question:"What percentage of the human body is water?",
+        answers: ["60 percent", "70 percent", "20 percent", "30 percent"],
+        correctAns:"60 percent"
+    },
+
+    {
+        question:"How many fingers do Simpsons characters have?",
+        answers: ["3", "5", "4", "6"],
+        correctAns:"4"
+    },
+
+    {
+        question:"What is the name of the biggest technology company in South Korea?",
+        answers: ["Samsung", "Greenlabs", "Webtoon", "Nokia"],
+        correctAns:"Samsung"
+    },
+
+
+    // Medium questions
+
+    {
+        question:"What are the five colours of the Olympic rings?",
+        answers: [" Blue, White, Black, Purple and Orange","Blue, Yellow, Black, Green and Red"," Blue, White, Orange, Green and Red"," Blue, Yellow, Orange, Green and Red"],
+        correctAns:"Blue, Yellow, Black, Green and Red"
+    },
+
+    {
+        question:"How many players are there in a rugby league team?",
+        answers: ["14", "7", "13", "10"],
+        correctAns:"13"
+    },
+
+    {
+        question:"Who won the FIFA Women's World Cup in 2019?",
+        answers: ["Brazil", "Russia", "Germany", "USA"],
+        correctAns:"USA"
+    },
+
+    {
+        question:"What is the middle name of Angela Merkel?",
+        answers: ["Dorothea", "Rachel", "Lang", "Helen"],
+        correctAns:"Dorothea"
+    },
+
+    {
+        question:"Which vitamin is the only one that you will not find in an egg?",
+        answers: ["Vitamin C", "Vitamin E", "Vitamin D", "Vitamin A"],
+        correctAns:"Vitamin C"
+    },
+
+    {
+        question:"Which year was the Premier League founded?",
+        answers: ["2000", "1993", "1992", "1982"],
+        correctAns:"1992"
+    },
+
+    {
+        question:"Which club won the 2017 UEFA Super Cup?",
+        answers: ["Real Madrid", "Liverpol", "Bayern Munich", "Barcelona"],
+        correctAns:"Real Madrid"
+    },
+
+    {
+        question:"Which footballer has the most Instagram followers in the world - as of 2020(2021)?",
+        answers: ["Diego Maradona", "Neymar", "Lionnel Messi", "Cristiano Ronaldo"],
+        correctAns:"Cristiano Ronaldo"
+    },
+
+    {
+        question:"What’s the chemical symbol for silver?",
+        answers: ["Si", "Cl", "Ag", "Ar"],
+        correctAns:"Ag"
+    },
+
+    {
+        question:"What is the capital city of Switzerland?",
+        answers: ["Lugano", "Basel", "Geneva", "Bern"],
+        correctAns:"Bern"
+    },
+
+    {
+        question:"How many permanent teeth does a dog have?",
+        answers: ["42", "56", "30", "25"],
+        correctAns:"42"
+    },
+
+    {
+        question:"How many permanent teeth does a dog have?",
+        answers: ["42", "56", "30", "25"],
+        correctAns:"42"
     }
 
 ]
@@ -142,7 +338,7 @@ function showQuestion() {
             falseAns();
         }
     }
-    // Show the next question random question
+    // Show the next random question
     val = Object.values(questions[Math.floor(Math.random() * (numberOfQuestions))]);
 
     // Displays the questions and answers on the interface
@@ -253,7 +449,6 @@ function showBox6() {
     document.getElementById("box-5").classList.remove("show-grid");
     document.getElementById("box-6").classList.remove("hide");
 }
-
 
 //adding sounds on click
 let auBtn = document.getElementById('btn1');
