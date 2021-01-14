@@ -62,9 +62,9 @@
     <section id="box-4" class="quiz-box hide">
         <h1 class="mode-title name-title">choose difficulty mode</h1>
         <div class="modes-sec">
-            <button class="btn mode-btn" onclick="showBox5(10)">easy mode</button>
-            <button class="btn mode-btn" onclick="showBox5(5)">medium mode</button>
-            <button class="btn mode-btn" onclick="showBox5(3)">hard mode</button>
+            <button class="btn mode-btn" onclick="showBox5(10, 'easy')">easy mode</button>
+            <button class="btn mode-btn" onclick="showBox5(5, 'medium')">medium mode</button>
+            <button class="btn mode-btn" onclick="showBox5(3, 'hard')">hard mode</button>
         </div>
     </section>
 
@@ -94,7 +94,7 @@
 
     <section id="box-6" class="quiz-box result-box hide">
         <h1><span class="candidate"></span><span> </span><span class="insult"></span></h1>
-        <p>you lost with <span class="points"></span> points</p>
+        <p>you lost with <span class="points"></span> points. and you selected <span class="mode"></span> mode</p>
     </section>
 
     <script src="assets/script/script.js">

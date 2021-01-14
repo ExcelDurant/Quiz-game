@@ -637,6 +637,7 @@ let lives;
 let err = document.getElementById('error');
 var countdown;
 var seconds;
+let mode;
 
 
 
@@ -752,7 +753,8 @@ function showBox4() {
     return candidateName;
 }
 
-function showBox5(n) {
+function showBox5(n, m) {
+    mode = m;
     document.getElementById("box-4").classList.remove("show");
     document.getElementById("box-5").classList.toggle("show-grid");
     lives = n;
@@ -762,6 +764,8 @@ function showBox5(n) {
 
 function showBox6() {
     let insult = document.getElementsByClassName('insult')[0];
+    let modes = document.getElementsByClassName('mode')[0];
+    modes.innerHTML = mode;
     document.getElementsByClassName('candidate')[0].innerHTML = candidateName;
     if (points <= 10) {
         insult.innerHTML = insults.ins1;
