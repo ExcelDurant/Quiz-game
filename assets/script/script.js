@@ -644,7 +644,7 @@ let mode;
 function showQuestion() {
     document.getElementsByClassName('lives')[0].innerHTML = lives;
     countdown = setInterval(timer, 1000);
-    seconds = 15;
+    seconds = 19;
     function timer() {
         seconds--;
         document.getElementById("timer").innerHTML = seconds + "    seconds left";
@@ -654,7 +654,9 @@ function showQuestion() {
         }
     }
     // Show the next random question
-    val = Object.values(questions[Math.floor(Math.random() * (numberOfQuestions))]);
+    spli = Math.floor(Math.random() * (numberOfQuestions));
+    val = Object.values(questions[spli]);
+    questions.splice(spli, 1);
 
     // Displays the questions and answers on the interface
     var y = document.getElementsByClassName('question-text');
