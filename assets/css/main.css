@@ -235,7 +235,7 @@ button {
 
 @media only screen and (max-width: 720px) {
     .quiz-box {
-        height: 480px;
+        height: auto;
         width: 100%;
         border-radius: 5px;
         margin: auto;
@@ -256,6 +256,14 @@ button {
 
     .answer {
         font-size: 4vw;
+    }
+
+    .answer:hover {
+        background-color: gray;
+    }
+
+    .points, .live-text {
+        font-size: 3vw;
     }
   }
 
